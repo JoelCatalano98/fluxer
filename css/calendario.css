@@ -23,7 +23,7 @@
     font-size: 0.85rem;
 }
 
-/* Modal Overlay: Centrado perfecto y oculto por defecto */
+/* Modal : Centrado */
 .modal-overlay {
     display: none; /* OCULTO POR DEFECTO */
     position: fixed;
@@ -41,6 +41,7 @@
 }
 
 /* Contenido del Modal */
+
 .modal-content {
     background: white;
     width: 90%;
@@ -81,6 +82,7 @@
 }
 
 /* Ajuste del cuerpo del calendario dentro del modal */
+
 #calendar {
     max-height: 70vh;
 }

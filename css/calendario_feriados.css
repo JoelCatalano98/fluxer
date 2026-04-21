@@ -89,6 +89,7 @@
 .estado-feriado i { font-size: 1rem; }
 
 /* Rango de fechas en el modal */
+
 .grupo-rango-fechas {
     display: grid;
     grid-template-columns: 1fr 1fr;

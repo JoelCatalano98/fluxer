@@ -11,17 +11,7 @@
     margin-top: 20px;
 }
 
-@media (max-width: 1000px) {
-    .cuadricula-pagos {
-        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
-    }
-}
 
-@media (max-width: 650px) {
-    .cuadricula-pagos {
-        grid-template-columns: 1fr; /* 1 columna en móviles */
-    }
-}
 
 .tarjeta-pago {
     background: white;
@@ -148,4 +138,17 @@
 /* Ajustes para el Switch más pequeño si es necesario */
 .switch {
     transform: scale(0.85);
+}
+
+
+@media (max-width: 1000px) {
+    .cuadricula-pagos {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+    }
+}
+
+@media (max-width: 650px) {
+    .cuadricula-pagos {
+        grid-template-columns: 1fr; /* 1 columna en móviles */
+    }
 }

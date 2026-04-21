@@ -80,6 +80,7 @@ body {
 }
 
 /* Ajuste para que el submenú no se corra a la derecha */
+
 .nav-links li {
     display: block; 
     padding: 10px 15px;
@@ -158,22 +159,24 @@ body {
 }
 
 /* --- MAIN CONTENT Y BANNER --- */
+
 .main-content {
     grid-area: main;
-    padding: 0; /* Quitamos el padding de acá para que el banner toque los bordes */
+    padding: 0; 
     overflow-y: auto;
-    overflow-x: hidden; /* Prohibimos el scroll horizontal por seguridad */
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
 }
 
-/* Imagen al 100% de ancho, más alta y sin bordes */
+/* Imagen al 100% de ancho, más alta y sin bordes */ 
+
 #content-header {
     position: relative;
-    width: 100%; /* Ahora es el 100% exacto del espacio disponible */
+    width: 100%; 
     min-height: 400px;
     height: 400px; 
-    margin: 0; /* Sin márgenes negativos que empujen hacia afuera */
+    margin: 0; 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -194,19 +197,20 @@ body {
     
 }
 
-/* --- CARDS "GORDITAS" CON FLEXBOX --- */
+/* --- CARDS --- */
+
 .dashboard-grid {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     gap: 100px;
-    padding: 35px; /* El espacio que sacamos del main lo ponemos acá */
+    padding: 35px; 
 }
 
 .card {
-    flex: 0 1 280px; /* Ancho controlado */
-    height: 160px;    /* Más gorditas */
+    flex: 0 1 280px; 
+    height: 160px;    
     background-color: var(--primary-dark);
     color: white;
     padding: 40px;
@@ -268,6 +272,7 @@ body {
 }
 
 /* Badges de colores para los estados */
+
 .badge {
     padding: 6px 12px;
     border-radius: 50px;
@@ -297,6 +302,7 @@ body {
 }
 
 /* La caja blanca del calendario */
+
 .modal-content {
     position: relative;
     background: white;
@@ -333,6 +339,7 @@ body {
 
 
 /* --- FOOTER --- */
+
 .app-footer {
     grid-area: footer;
     background: var(--white);
@@ -351,6 +358,7 @@ body {
 }
 
 /* --- ESTILOS ADICIONALES PARA FORMULARIOS DE AYUDA --- */
+
 .help-form {
     display: flex;
     flex-direction: column;
