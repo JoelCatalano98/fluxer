@@ -84,40 +84,40 @@
         <div class="contenedor-formulario">
             <div class="cabecera-formulario cabecera-profesional">
                 <h1><i class="bi bi-person-badge"></i> Nuevo Profesional</h1>
-                <p>Completa los datos para dar de alta al miembro del staff médico o técnico.</p>
+                <p>Completa los datos para dar de alta un miembro.</p>
             </div>
 
             <form class="formulario-fluxer" onsubmit="alert('¡Profesional registrado con éxito!'); window.location.href='Profesionales.html'; return false;">
                 <div class="cuadricula-formulario">
                     <div class="grupo-campo">
-                        <label for="nombre" style="display: block; margin-bottom: 5px; font-weight: 600;">Nombre y Apellido</label>
-                        <input type="text" id="nombre" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px;">
+                        <label for="nombre">Nombre y Apellido</label>
+                        <input type="text" id="nombre" required>
                     </div>
                     <div class="grupo-campo">
-                        <label for="dni" style="display: block; margin-bottom: 5px; font-weight: 600;">DNI / Identificación</label>
-                        <input type="text" id="dni" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px;">
+                        <label for="dni">DNI / Identificación</label>
+                        <input type="text" id="dni">
                     </div>
                     <div class="grupo-campo">
-                        <label for="especialidad" style="display: block; margin-bottom: 5px; font-weight: 600;">Especialidad</label>
-                        <input type="text" id="especialidad" placeholder="Ej: Cardiólogo, Nutricionista..." style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px;">
+                        <label for="especialidad">Especialidad</label>
+                        <input type="text" id="especialidad" placeholder="Ej: Cardiólogo, Nutricionista...">
                     </div>
                     <div class="grupo-campo">
-                        <label for="matricula" style="display: block; margin-bottom: 5px; font-weight: 600;">Nro. Matrícula</label>
-                        <input type="text" id="matricula" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px;">
+                        <label for="matricula">Nro. Matrícula</label>
+                        <input type="text" id="matricula">
                     </div>
                     <div class="grupo-campo">
-                        <label for="email" style="display: block; margin-bottom: 5px; font-weight: 600;">Email</label>
-                        <input type="email" id="email" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px;">
+                        <label for="email">Email</label>
+                        <input type="email" id="email">
                     </div>
                     <div class="grupo-campo">
-                        <label for="telefono" style="display: block; margin-bottom: 5px; font-weight: 600;">Teléfono Contacto</label>
-                        <input type="tel" id="telefono" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px;">
+                        <label for="telefono">Teléfono Contacto</label>
+                        <input type="tel" id="telefono">
                     </div>
                 </div>
 
                 <div class="acciones-formulario">
-                    <button type="button" class="btn-secondary" onclick="window.history.back()" style="padding: 10px 20px; border-radius: 6px; border: 1px solid #ddd; background: #f8f9fa; cursor: pointer;">Cancelar</button>
-                    <button type="submit" class="btn-help" style="padding: 10px 25px; border-radius: 6px; border: none; background: #40c057; color: white; cursor: pointer; font-weight: 600;">
+                    <button type="button" class="btn-secondary" onclick="window.history.back()">Cancelar</button>
+                    <button type="submit" class="btn-help">
                         <i class="bi bi-check-circle"></i> Registrar Profesional
                     </button>
                 </div>
