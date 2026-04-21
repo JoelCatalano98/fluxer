@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluxer - Iniciar Sesión</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <div class="login-header">
+                <h1>FLUXER</h1>
+                <p>Gestión Integral de Servicios</p>
+            </div>
+            
+            <form action="pages/dashboard.html" method="GET">
+                <div class="input-group">
+                    <label for="user"><i class="bi bi-person"></i> Usuario</label>
+                    <input type="text" id="user" placeholder="Ingresá tu usuario" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="password"><i class="bi bi-lock"></i> Contraseña</label>
+                    <input type="password" id="password" placeholder="••••••••" required>
+                </div>
+
+                <button type="button"class="btn-login"onclick="window.location.href='pages/dashboard.html'">Entrar</button>
+
+                <div class="login-footer">
+                    <a href="#">¿Olvidaste tu contraseña?</a>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</body>
+</html>

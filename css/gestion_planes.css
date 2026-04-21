@@ -1,0 +1,98 @@
+.boton-profesional {
+    background-color: #40c057;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.boton-profesional:hover {
+    background-color: #2f9e44;
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(64, 192, 87, 0.3);
+}
+
+.cabecera-contenido {
+    position: relative;
+    width: 100%;
+    min-height: 100px;
+    height: 200px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 0;
+    color: white;
+    overflow: hidden;
+}
+
+.cuadricula-planes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 70px;
+    padding: 20px 40px;
+}
+
+.tarjeta-plan {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border: 2px solid transparent;
+    transition: transform 0.3s;
+}
+
+.tarjeta-plan:hover {
+    transform: translateY(-5px);
+}
+
+.tarjeta-plan.destacado {
+    border-color: #0099ff;
+    scale: 1.05;
+}
+
+.etiqueta-plan {
+    background: #e1f0ff;
+    color: #0099ff;
+    padding: 5px 12px;
+    border-radius: 20px;
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.precio {
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 15px 0;
+}
+
+.precio span {
+    font-size: 1rem;
+    color: #888;
+}
+
+.caracteristicas-plan {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    text-align: left;
+}
+
+.caracteristicas-plan li {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.caracteristicas-plan .deshabilitado {
+    color: #ccc;
+    text-decoration: line-through;
+}
+
+.acciones-plan {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}

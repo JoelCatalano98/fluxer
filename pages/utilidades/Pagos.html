@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluxer - Medios de Pago</title>
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="../../css/configuracion_pagos.css">
+    <link rel="stylesheet" href="../../css/calendario.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
+</head>
+<body>
+
+    <nav class="topbar">
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar medios de pago...">
+        </div>
+        <div class="user-actions">
+            <button class="btn-help" onclick="openHelp()"><i class="bi bi-question-circle"></i> Ayuda</button>
+            <button class="btn-logout" onclick="window.location.href='../../index.html'"><i class="bi bi-box-arrow-right"></i> Salir</button>
+        </div>
+    </nav>
+
+    <aside class="sidebar">
+        <div class="logo">
+            <h2>FLUXER</h2>
+        </div>
+        <ul class="nav-links">
+            <li onclick="window.location.href='../dashboard.html'" style="cursor: pointer;">
+                <i class="bi bi-house"></i> Inicio
+            </li>
+            <li>
+                <details>
+                    <summary><i class="bi bi-gear"></i> Servicios</summary>
+                    <ul class="submenu">
+                        <li onclick="window.location.href='../servicios/GestionPlanes.html'" style="cursor: pointer;">Gestión de Planes</li>
+                        <li onclick="window.location.href='../servicios/horarios.html'" style="cursor: pointer;">Turnos/horarios</li>
+                        <li onclick="window.location.href='../servicios/ConfiguracionLocal.html'" style="cursor: pointer;">Configuración Local</li>
+                    </ul>
+                </details>
+            </li>
+            <li>
+                <details>
+                    <summary><i class="bi bi-people"></i> Clientes</summary>
+                    <ul class="submenu">
+                        <li onclick="window.location.href='../clientes/CrearProfesional.html'" style="cursor: pointer;">Crear Profesional</li>
+                        <li onclick="window.location.href='../clientes/Profesionales.html'" style="cursor: pointer;">Profesionales</li>
+                        <li onclick="window.location.href='../clientes/CrearClientes.html'" style="cursor: pointer;">Crear Cliente</li>
+                        <li onclick="window.location.href='../clientes/ClienteTotales.html'" style="cursor: pointer;">Clientes</li>
+                        <li onclick="window.location.href='../clientes/Morosos.html'" style="cursor: pointer;">Morosos</li>
+                        <li onclick="window.location.href='../clientes/abonos.html'" style="cursor: pointer;">Ver Planes</li>
+                    </ul>
+                </details>
+            </li>
+            <li class="active">
+                <details open>
+                    <summary><i class="bi bi-tools"></i> Utilidades</summary>
+                    <ul class="submenu">
+                        <li onclick="window.location.href='../CategoriasEtiquetas/CategoriasEtiquetas.html'" style="cursor: pointer;">Categorias/Etiquetas</li>
+                        <li class="active-link" onclick="window.location.href='Pagos.html'" style="cursor: pointer;">Medios de Pago</li>
+                        <li onclick="window.location.href='Feriados.html'" style="cursor: pointer;">Feriados / Días No Laborales</li>
+                    </ul>
+                </details>
+            </li>
+            <li>
+                <details>
+                    <summary><i class="bi bi-calendar3"></i> Calendario</summary>
+                    <ul class="submenu">
+                        <li onclick="openCalendar()" style="cursor: pointer;">Mensual</li>
+                    </ul>
+                </details>
+            </li>
+        </ul>
+    </aside>
+
+    <main class="main-content">
+        <section id="content-header" style="min-height: 100px; height: 150px; justify-content: center;">
+            <h1 id="main-title" style="color: white; text-align: left; margin: 0;">Medios de Pago</h1>
+            <p style="color: rgba(255,255,255,0.8); margin: 5px 0 0 0;">Configura tus canales de cobro y recargos</p>
+            <img src="../../img/welcome-background.png" alt="Fondo" style="height: 100%;">
+        </section>
+
+        <div class="contenedor-pagos">
+            <div style="padding: 0 0 20px 0;">
+                <button class="btn-primary" onclick="openModalNuevoPago()" style="width: auto; height: auto; padding: 10px 20px; font-size: 0.9rem;">
+                    <i class="bi bi-plus-circle"></i> Nuevo Medio
+                </button>
+            </div>
+
+            <div class="cuadricula-pagos">
+                
+                <!-- Efectivo -->
+                <article class="tarjeta-pago activo">
+                    <div class="cabecera-tarjeta-pago">
+                        <div class="info-metodo">
+                            <i class="bi bi-cash-stack"></i>
+                            <h3>Efectivo</h3>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="cuerpo-tarjeta-pago">
+                        <div class="caja-instrucciones">
+                            <label>Recargo/Descuento (%)</label>
+                            <div class="grupo-entrada-comision">
+                                <input type="number" value="-5">
+                                <span class="icono-porcentaje">%</span>
+                            </div>
+                            <span class="etiqueta-comision comision-negativa">Descuento aplicado</span>
+                        </div>
+                        <div class="caja-instrucciones">
+                            <label>Instrucciones</label>
+                            <textarea rows="2">5% de descuento en recepción.</textarea>
+                        </div>
+                    </div>
+                    <div class="pie-tarjeta-pago">
+                        <button class="btn-help" style="background: var(--accent-blue); color: white; border: none; padding: 6px 15px; border-radius: 6px; cursor: pointer; font-size: 0.85rem;" onclick="alert('Efectivo actualizado')">Guardar</button>
+                    </div>
+                </article>
+
+                <!-- Transferencia -->
+                <article class="tarjeta-pago activo">
+                    <div class="cabecera-tarjeta-pago">
+                        <div class="info-metodo">
+                            <i class="bi bi-bank"></i>
+                            <h3>Transferencia</h3>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="cuerpo-tarjeta-pago">
+                        <div class="caja-instrucciones">
+                            <label>Recargo (%)</label>
+                            <div class="grupo-entrada-comision">
+                                <input type="number" value="0">
+                                <span class="icono-porcentaje">%</span>
+                            </div>
+                        </div>
+                        <div class="caja-instrucciones">
+                            <label>CBU / Alias</label>
+                            <textarea rows="2">Alias: fluxer.gym.ok&#10;CBU: 00000031000987654321</textarea>
+                        </div>
+                    </div>
+                    <div class="pie-tarjeta-pago">
+                        <button class="btn-help" style="background: var(--accent-blue); color: white; border: none; padding: 6px 15px; border-radius: 6px; cursor: pointer; font-size: 0.85rem;" onclick="alert('Datos bancarios guardados')">Guardar</button>
+                    </div>
+                </article>
+
+                <!-- Tarjeta / Digital -->
+                <article class="tarjeta-pago">
+                    <div class="cabecera-tarjeta-pago">
+                        <div class="info-metodo">
+                            <i class="bi bi-credit-card"></i>
+                            <h3>Tarjeta / Digital</h3>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="cuerpo-tarjeta-pago">
+                        <div class="caja-instrucciones">
+                            <label>Recargo (%)</label>
+                            <div class="grupo-entrada-comision">
+                                <input type="number" value="10">
+                                <span class="icono-porcentaje">%</span>
+                            </div>
+                            <span class="etiqueta-comision comision-positiva">Recargo aplicado</span>
+                        </div>
+                        <div class="caja-instrucciones">
+                            <label>Link / Info</label>
+                            <textarea rows="2">Recargo del 10% por gastos.</textarea>
+                        </div>
+                    </div>
+                    <div class="pie-tarjeta-pago">
+                        <button class="btn-help" style="background: var(--accent-blue); color: white; border: none; padding: 6px 15px; border-radius: 6px; cursor: pointer; font-size: 0.85rem;" onclick="alert('Configuración digital guardada')">Guardar</button>
+                    </div>
+                </article>
+
+                <!-- Cuenta Corriente -->
+                <article class="tarjeta-pago activo">
+                    <div class="cabecera-tarjeta-pago">
+                        <div class="info-metodo">
+                            <i class="bi bi-journal-bookmark-fill"></i>
+                            <h3>Cta. Corriente</h3>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="cuerpo-tarjeta-pago">
+                        <p style="font-size: 0.75rem; color: #666; margin: 0; min-height: 45px;">Para clientes de confianza. Pago al finalizar el período.</p>
+                        <div class="caja-instrucciones">
+                            <label>Notas</label>
+                            <textarea rows="2">Solo socios de +6 meses.</textarea>
+                        </div>
+                    </div>
+                    <div class="pie-tarjeta-pago">
+                        <button class="btn-help" style="background: var(--accent-blue); color: white; border: none; padding: 6px 15px; border-radius: 6px; cursor: pointer; font-size: 0.85rem;" onclick="alert('Cuenta corriente configurada')">Guardar</button>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="app-footer">
+        <div class="footer-left">
+            <span><i class="bi bi-cpu"></i> Fluxer v1.0</span>
+            <span class="status-online"><i class="bi bi-circle-fill"></i> Sistema Activo</span>
+        </div>
+        <div class="footer-right">
+            <span>&copy; 2026 - Fluxer.com</span>
+        </div>
+    </footer>
+
+    <!-- Modal del Calendario -->
+    <div id="calendarModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Agenda de Turnos</h2>
+                <button class="close-modal" onclick="closeCalendar()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="calendar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Nuevo Medio de Pago estandarizado -->
+    <div id="modalNuevoPago" class="modal-overlay">
+        <div class="modal-content" style="max-width: 500px;">
+            <div class="modal-header">
+                <h2><i class="bi bi-plus-circle"></i> Nuevo Medio</h2>
+                <button class="close-modal" onclick="closeModalNuevoPago()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form onsubmit="alert('¡Nuevo medio de pago creado!'); closeModalNuevoPago(); return false;">
+                    <div class="grupo-campo">
+                        <label style="display: block; margin-bottom: 5px; font-weight: 600;">Nombre del Medio</label>
+                        <input type="text" id="new_payment_name" placeholder="Ej: Mercado Pago..." required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px;">
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 15px;">
+                        <div class="grupo-campo">
+                            <label style="display: block; margin-bottom: 5px; font-weight: 600;">Tipo de Medio</label>
+                            <select id="new_payment_type" onchange="toggleCardFields()" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px;">
+                                <option value="efectivo">Efectivo</option>
+                                <option value="transferencia">Transferencia</option>
+                                <option value="tarjeta">Tarjeta</option>
+                                <option value="digital">Digital</option>
+                            </select>
+                        </div>
+                        <div class="grupo-campo">
+                            <label style="display: block; margin-bottom: 5px; font-weight: 600;">Recargo (%)</label>
+                            <input type="number" id="new_payment_fee" placeholder="0" value="0" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px;">
+                        </div>
+                    </div>
+
+                    <div id="card-fields" style="display: none; margin-top: 20px; padding: 15px; background: #f8f9fa; border-radius: 10px; border-left: 4px solid var(--accent-blue);">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                            <div class="grupo-campo">
+                                <label style="display: block; margin-bottom: 5px; font-weight: 600;">Tarjeta</label>
+                                <select id="card_brand" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px;">
+                                    <option value="visa">Visa</option>
+                                    <option value="mastercard">Mastercard</option>
+                                </select>
+                            </div>
+                            <div class="grupo-campo">
+                                <label style="display: block; margin-bottom: 5px; font-weight: 600;">Cuotas</label>
+                                <select id="card_installments" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px;">
+                                    <option value="1">1 pago</option>
+                                    <option value="3">Hasta 3</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grupo-campo" style="margin-top: 15px;">
+                        <label style="display: block; margin-bottom: 5px; font-weight: 600;">Instrucciones</label>
+                        <textarea id="new_payment_instr" rows="3" placeholder="Instrucciones..." style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; resize: vertical;"></textarea>
+                    </div>
+
+                    <div style="margin-top: 25px; display: flex; justify-content: flex-end; gap: 10px;">
+                        <button type="button" class="btn-secondary" onclick="closeModalNuevoPago()" style="padding: 10px 20px; border-radius: 6px; border: 1px solid #ddd; background: #f8f9fa; cursor: pointer;">Cancelar</button>
+                        <button type="submit" class="btn-help" style="padding: 10px 25px; border-radius: 6px; border: none; background: var(--accent-blue); color: white; cursor: pointer; font-weight: 600;">Crear</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../js/calendario-modal.js"></script>
+    <script src="../../js/help.js"></script>
+    <script>
+        function openModalNuevoPago() {
+            document.getElementById('modalNuevoPago').style.display = 'flex';
+        }
+        function closeModalNuevoPago() {
+            document.getElementById('modalNuevoPago').style.display = 'none';
+        }
+        function toggleCardFields() {
+            const type = document.getElementById('new_payment_type').value;
+            const cardFields = document.getElementById('card-fields');
+            cardFields.style.display = (type === 'tarjeta') ? 'block' : 'none';
+        }
+        window.onclick = function(event) {
+            const modal = document.getElementById('modalNuevoPago');
+            const calModal = document.getElementById('calendarModal');
+            if (event.target == modal) closeModalNuevoPago();
+            if (event.target == calModal) closeCalendar();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,400 @@
+/* 
+   ==========================================================================
+   ESTILOS GLOBALES FLUXER (ESTRUCTURA Y COMPONENTES BASE)
+   ========================================================================== 
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-dark: #333639; /* Gris Grafito */
+    --accent-blue: #00a8e8;  /* Celeste Fluxer */
+    --bg-light: #f4f7f6;     
+    --white: #ffffff;
+    --sidebar-width: 260px;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-light);
+    display: grid;
+    grid-template-columns: var(--sidebar-width) 1fr;
+    grid-template-rows: 70px 1fr 40px; 
+    grid-template-areas: 
+        "aside nav"
+        "aside main"
+        "aside footer";
+    min-height: 100vh;
+}
+
+/* --- BARRA LATERAL (SIDEBAR) --- */
+.sidebar {
+    grid-area: aside;
+    background-color: var(--primary-dark);
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+.logo {
+    position: sticky;
+    top: 0;
+    background-color: var(--primary-dark);
+    z-index: 10;
+    padding-top: 20px; /* Para que no toque el borde superior */
+}
+.topbar {
+    background-color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px; /* Un poco más de aire */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+
+    /* Esto es lo que la hace fija */
+    position: sticky;
+    top: 0;
+    z-index: 1000; 
+    width: 100%;
+    box-sizing: border-box; /* Para que el padding no la ensanche */
+}
+
+.sidebar .logo h2 {
+    color: var(--accent-blue);
+    text-align: center;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #444;
+    padding-bottom: 0px;
+    margin-bottom: 20px;
+}
+
+.nav-links {
+    list-style: none;
+    color:white;
+    padding-left: 15px;
+
+}
+
+/* Ajuste para que el submenú no se corra a la derecha */
+.nav-links li {
+    display: block; 
+    padding: 10px 15px;
+    font-size: 1.05rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.nav-links li i {
+    margin-right: 10px;
+    color: var(--accent-blue);
+}
+
+.nav-links li:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+}
+
+.nav-links .active {
+    color: var(--accent-blue);
+    font-weight: 600;
+}
+
+/* Submenú corregido */
+.submenu {
+    list-style: none;
+    padding-left: 25px;
+    margin-top: 10px;
+}
+
+.submenu li {
+    font-size: 0.9rem;
+    color: #bbb;
+    padding: 8px 0;
+}
+
+.submenu li:hover {
+    color: white;
+    background: none;
+}
+
+/* --- NAVBAR Y BUSCADOR --- */
+.topbar {
+    grid-area: nav;
+    background-color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 70px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.search-bar {
+    width: 700px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    outline: none;
+}
+
+.user-actions button {
+    padding: 8px 15px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    background: white;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/* --- MAIN CONTENT Y BANNER --- */
+.main-content {
+    grid-area: main;
+    padding: 0; /* Quitamos el padding de acá para que el banner toque los bordes */
+    overflow-y: auto;
+    overflow-x: hidden; /* Prohibimos el scroll horizontal por seguridad */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Imagen al 100% de ancho, más alta y sin bordes */
+#content-header {
+    position: relative;
+    width: 100%; /* Ahora es el 100% exacto del espacio disponible */
+    min-height: 400px;
+    height: 400px; 
+    margin: 0; /* Sin márgenes negativos que empujen hacia afuera */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 60px;
+    color: white;
+    overflow: hidden;
+}
+
+#content-header img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.4);
+    
+}
+
+/* --- CARDS "GORDITAS" CON FLEXBOX --- */
+.dashboard-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 100px;
+    padding: 30px; /* El espacio que sacamos del main lo ponemos acá */
+}
+
+.card {
+    flex: 0 1 280px; /* Ancho controlado */
+    height: 160px;    /* Más gorditas */
+    background-color: var(--primary-dark);
+    color: white;
+    padding: 40px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+.card i {
+    font-size: 3rem;
+    color: var(--accent-blue);
+}
+
+.card .stat {
+    font-size: 1.8rem;
+    font-weight: 700;
+    display: block;
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #bbb;
+    font-weight: 400;
+}
+
+.recent-activity {
+    margin-top: 40px;
+    padding: 0 30px; /* Alineado con las cards */
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.data-table th, .data-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.data-table th {
+    background-color: #f8f9fa;
+    color: var(--primary-dark);
+    font-weight: 600;
+}
+
+/* Badges de colores para los estados */
+.badge {
+    padding: 6px 12px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    display: inline-block;
+    text-align: center;
+}
+
+.badge-pending { background: #fff4e6; color: #fd7e14; }
+.badge-success { background: #ebfbee; color: #40c057; }
+
+
+/* --- calendario --- */
+
+/* Fondo oscuro que cubre la pantalla */
+.modal-overlay {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 9999; /* Por encima de todo */
+    backdrop-filter: blur(5px); /* Efecto de desenfoque */
+}
+
+/* La caja blanca del calendario */
+.modal-content {
+    position: relative;
+    background: white;
+    width: 80%;
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    animation: fadeIn 0.3s ease-out;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #666;
+}
+
+@keyframes fadeIn {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+
+/* --- FOOTER --- */
+.app-footer {
+    grid-area: footer;
+    background: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    font-size: 0.8rem;
+    color: #888;
+    border-top: 1px solid #ddd;
+}
+
+.status-online {
+    color: #28a745;
+    margin-left: 10px;
+}
+
+/* --- ESTILOS ADICIONALES PARA FORMULARIOS DE AYUDA --- */
+.help-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.help-form .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.help-form label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #444;
+}
+
+.help-form input, 
+.help-form select, 
+.help-form textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.95rem;
+}
+
+.help-form textarea {
+    resize: vertical;
+}
+
+.btn-submit-help {
+    background-color: var(--accent-blue);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.btn-submit-help:hover {
+    background-color: #0086bc;
+    transform: translateY(-2px);
+}
+

@@ -1,0 +1,77 @@
+/* Estilos específicos para las secciones de Clientes, Abonos y Profesionales */
+
+.seccion-clientes {
+    padding: 30px;
+}
+
+.cabecera-seccion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.cabecera-seccion h2 {
+    margin: 0;
+    color: var(--primary-dark);
+    font-size: 1.5rem;
+}
+
+/* Botones de Acción en Tabla */
+.boton-editar, .boton-eliminar {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #eee;
+    background: white;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-right: 5px;
+}
+
+.boton-editar:hover {
+    background-color: #f0f7ff;
+    color: var(--accent-blue);
+    border-color: var(--accent-blue);
+}
+
+.boton-eliminar:hover {
+    background-color: #fff0f0;
+    color: #e03131;
+    border-color: #e03131;
+}
+
+/* Badge de Plan */
+.etiqueta-plan {
+    background: #e7f5ff;
+    color: #1971c2;
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Estilo para el link activo del submenú */
+.enlace-activo {
+    color: var(--accent-blue) !important;
+    font-weight: 600;
+}
+
+/* MOROSOS */
+
+.fila-moroso {
+    background-color: #fff5f5 !important; 
+    border-left: 4px solid #ff8787;
+}
+
+.fila-moroso:hover {
+    background-color: #ffe3e3 !important;
+}
+
+.etiqueta-deuda {
+    background: #ffe3e3;
+    color: #e03131;
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}

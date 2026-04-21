@@ -1,0 +1,100 @@
+.contenedor-feriados {
+    padding: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.acciones-feriados {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.lista-feriados {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.item-feriado {
+    background: white;
+    border-radius: 12px;
+    padding: 20px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    border-left: 5px solid #ddd;
+    transition: 0.3s;
+}
+
+.item-feriado:hover {
+    transform: translateX(5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.06);
+}
+
+.item-feriado.nacional { border-left-color: #ffc107; } /* Amarillo para feriados nacionales */
+.item-feriado.vacaciones { border-left-color: #40c057; } /* Verde para vacaciones/cierre local */
+
+.info-feriado {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.caja-fecha-feriado {
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    min-width: 80px;
+}
+
+.caja-fecha-feriado .dia {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--primary-dark);
+}
+
+.caja-fecha-feriado .mes {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #888;
+    font-weight: 600;
+}
+
+.detalles-feriado h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.detalles-feriado p {
+    margin: 5px 0 0;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.estado-feriado {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #ff4b4b;
+}
+
+.estado-feriado i { font-size: 1rem; }
+
+/* Rango de fechas en el modal */
+.grupo-rango-fechas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    padding: 15px;
+    background: #f1f3f5;
+    border-radius: 10px;
+    margin-top: 10px;
+}
