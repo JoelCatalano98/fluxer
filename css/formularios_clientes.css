@@ -2,8 +2,48 @@
 
 .contenedor-formulario {
     padding: 40px;
-    max-width: 900px;
+    max-width: 1100px;
     margin: 0 auto;
+}
+
+.formulario-fluxer {
+    background-color: var(--white);
+    padding: 30px;
+    width: 900px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.grupo-campo {
+
+    margin-bottom: 5px;
+}
+
+.grupo-campo label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.grupo-campo input, 
+.grupo-campo select, 
+.grupo-campo textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-family: inherit;
+}
+
+.grupo-campo textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.grupo-campo input:focus {
+    outline: none;
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 2px rgba(64, 192, 87, 0.1);
 }
 
 .cabecera-formulario {
@@ -30,7 +70,7 @@
 .cuadricula-formulario {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 5px;
 }
 
 .ancho-completo {
@@ -54,6 +94,50 @@
 
 .boton-profesional:hover {
     background-color: #2f9e44;
+}
+
+/* Estilos para botones de formularios */
+.btn-primary, .btn-secondary, .btn-help {
+    padding: 10px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+    font-family: inherit;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-primary {
+    background-color: var(--accent-blue);
+    color: white;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0086bc;
+}
+
+.btn-secondary {
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    color: #333;
+    padding: 10px 20px;
+}
+
+.btn-secondary:hover {
+    background: #e9ecef;
+}
+
+.btn-help {
+    background: #40c057;
+    color: rgb(14, 13, 13);
+    border: none;
+}
+
+.btn-help:hover {
+    background: #2f9e44;
 }
 
 /* Estilo para el link activo en la sidebar */

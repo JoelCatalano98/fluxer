@@ -198,8 +198,10 @@ body {
 .dashboard-grid {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     gap: 100px;
-    padding: 30px; /* El espacio que sacamos del main lo ponemos acá */
+    padding: 35px; /* El espacio que sacamos del main lo ponemos acá */
 }
 
 .card {
