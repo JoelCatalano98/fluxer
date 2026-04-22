@@ -69,7 +69,7 @@
     display: inline-block;
     font-size: 0.8rem;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 0;
 }
 
 .precio {
@@ -106,12 +106,12 @@
     gap: 10px;
 }
 
-/* --- ESTILOS PARA EL MODAL DE NUEVO PLAN --- */
+/* --- ESTILOS PARA EL MODAL -- */
 
 
 #modalNuevoPlan .modal-content {
     max-width: 800px;
-    max-height: 600px;
+    max-height: 765px;
     width: 90%;
     margin: 50px auto;
     padding: 30px;
@@ -177,4 +177,90 @@
     display: flex;
     justify-content: flex-end;
     gap: 15px;
+}
+
+
+
+@media screen and (max-width: 480px) {
+    
+    /* 1. Ajuste del Header (Título y Fondo) */
+    #content-header {
+        height: 95px !important;
+        padding: 15px !important;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #content-header h1 {
+        font-size: 1.6rem !important;
+        text-align: center !important;
+    }
+
+    #content-header p {
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+    /* 2. Botón "Crear Nuevo Plan" */
+    .main-content > div[style*="padding: 20px 30px"] {
+        padding: 15px !important;
+        display: flex;
+        justify-content: center;
+    }
+
+    .btn-primary {
+        width: 100% !important; /* El botón ocupa todo el ancho en el celu */
+        justify-content: center;
+    }
+
+    /* 3. Cuadrícula de Tarjetas: Una debajo de la otra */
+
+    .cuadricula-planes {
+        grid-template-columns: 1fr !important; /* 1 sola columna */
+        gap: 20px !important;
+        padding: 15px !important;
+    }
+
+    .tarjeta-plan {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 90%;
+        min-height: 225px;
+    }
+
+    .tarjeta-plan.destacado {
+        transform: scale(1); 
+        border-width: 3px;
+    }
+
+    .precio {
+        font-size: 1.8rem;
+    }
+
+
+    #modalNuevoPlan .modal-content {
+        width: 95% !important;
+        height: 100%;
+        padding:15px !important;
+        margin: 10px auto !important;
+    }
+
+    #modalNuevoPlan .cuadricula-form {
+        grid-template-columns: 1fr !important; /* Los inputs uno abajo del otro */
+        gap: 15px !important;
+    }
+
+    #modalNuevoPlan .pie-formulario {
+        flex-direction: column; /* Botones Guardar/Cancelar uno arriba del otro */
+        gap: 10px;
+    }
+
+    #modalNuevoPlan .pie-formulario button {
+        width: 100%;
+    }
+
+    /* 5. Ajuste de imágenes decorativas */
+    #content-header img {
+        display: none; /* Quitamos la imagen de fondo si estorba el texto en el celu */
+    }
 }

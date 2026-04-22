@@ -129,10 +129,104 @@ input:checked + .deslizador:before { transform: translateX(24px); }
     display: flex;
     justify-content: flex-end;
     gap: 20px;
+    width: 375px;
     margin-top: 10px;
     margin-bottom: 50px;
     padding: 25px;
     background: #fff;
     border-radius: 15px;
     border: 2px solid var(--accent-blue);
+}
+
+
+
+/* Botón Hamburguesa - Oculto */
+.hamburger-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 0 15px;
+}
+
+/* --- RESPONSIVE  --- */
+@media screen and (max-width: 768px) {
+    .hamburger-btn {
+        display: block; /* Aparece solo en móviles */
+    }
+    
+
+    .sidebar {
+        position: fixed;
+        left: -260px; /* Escondida a la izquierda */
+        transition: all 0.3s ease;
+        z-index: 1000;
+        height: 100vh;
+    }
+
+    .seccion-configuracion {
+        width: 100% !important; 
+        max-width: 370px ; 
+        padding: 25px; 
+        margin: 0 0 auto; 
+    }
+    .sidebar.active {
+        left: 0; /* Aparece cuando tiene la clase .active */
+    }
+
+    .main-content {
+        margin-left: 0 !important; 
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .contenedor-configuracion {
+        padding: 15px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .seccion-configuracion {
+        padding: 20px;
+        width: 100% !important;
+        max-width: none !important;
+    }
+
+    .seccion-configuracion {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+    }
+
+    .subida-logo {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .acciones-finales-configuracion {
+        width: 100% !important;
+        flex-direction: column;
+        padding: 15px;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .acciones-finales-configuracion button {
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    #content-header {
+        height: 120px !important;
+        padding: 15px !important;
+        text-align: center;
+    }
+
+    #content-header h1 {
+        font-size: 1.5rem !important;
+        text-align: center !important;
+    }
 }

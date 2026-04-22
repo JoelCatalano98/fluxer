@@ -369,6 +369,12 @@ body {
     flex-direction: column;
     gap: 15px;
 }
+.btn-help {
+    background: #40c057;
+    color: rgb(14, 13, 13);
+    border: none;
+    border-radius: 5%;
+}
 
 .help-form .form-group {
     display: flex;
@@ -399,6 +405,7 @@ body {
 .btn-submit-help {
     background-color: var(--accent-blue);
     color: white;
+    background: #40c057;
     border: none;
     padding: 12px;
     border-radius: 8px;
@@ -455,9 +462,6 @@ body {
         padding-left: 0;
     }
 
-    .nav-links li {
-        padding: 5px 0;
-    }
 
     .nav-links li i {
         margin-right: 0;

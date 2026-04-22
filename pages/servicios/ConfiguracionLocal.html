@@ -13,6 +13,9 @@
 <body>
 
     <nav class="topbar">
+        <button id="menu-toggle" class="hamburger-btn">
+            <i class="bi bi-list"></i>
+        </button>
         <div class="search-bar">
             <input type="text" placeholder="Buscar en configuración...">
         </div>
@@ -113,7 +116,7 @@
                         <input type="text" id="gym_dir" placeholder="Calle, Altura, Ciudad" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px;">
                     </div>
                     <div>
-                        <label style="display: block; margin-bottom: 5px; font-weight: 600;">Teléfono de Contacto</label>
+                        <label style="display: block; margin-bottom: 5px; font-weight: 600;">Teléfono</label>
                         <input type="tel" id="gym_tel" placeholder="+54 9 ..." style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px;">
                     </div>
                     <div>
@@ -182,7 +185,25 @@
 
         </div>
     </main>
+<script>
+            const menuToggle = document.getElementById('menu-toggle');
+        const sidebar = document.querySelector('.sidebar');
 
+        if (menuToggle) {
+            menuToggle.addEventListener('click', (e) => {
+                e.stopPropagation(); // Evita que el clic se propague al main
+                sidebar.classList.toggle('active');
+            });
+        }
+
+        // Cerrar el menú si se hace clic en cualquier parte del contenido principal
+        document.querySelector('.main-content').addEventListener('click', () => {
+            if (sidebar.classList.contains('active')) {
+                sidebar.classList.remove('active');
+            }
+        }); 
+</script>
+    
     <script>
         function updateLogoPreview(input) {
             if (input.files && input.files[0]) {
