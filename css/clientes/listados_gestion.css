@@ -1,4 +1,13 @@
-/* Estilos específicos para las secciones de Clientes, Abonos y Profesionales */
+/* --- ESTE CSS , ABARCA PROFESIONALES,CLIENTES Y MOROSOS--- */
+.main-content { 
+    width: 100%;
+    overflow-x: hidden; /* Evita el scroll horizontal de toda la página */
+}
+
+
+section, .main-content > div {
+    overflow: visible;
+}
 
 .seccion-clientes {
     padding: 30px;
@@ -17,8 +26,56 @@
     font-size: 1.5rem;
 }
 
-/* Botones de Acción en Tabla */
+/* --- TABLA Y SCROLL --- */
 
+.contenedor-scroll {
+    width: 100%;
+    overflow-x: auto;
+    background: #fff;
+    border-radius: 12px;
+    -webkit-overflow-scrolling: touch;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.tabla-cronograma {
+    width: 100%;
+    min-width: 900px; /* Forzamos el scroll horizontal */
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+/* --- CELDAS Y CABECERA --- */
+
+.tabla-cronograma th, 
+.tabla-cronograma td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    white-space: nowrap;
+}
+
+.tabla-cronograma th {
+    background-color: #f8f9fa;
+    color: #444;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* ---  COLUMNA FIJA --- */
+.columna-fija {
+    position: sticky;
+    left: 0; 
+    z-index: 10; 
+    background: #f1f3f5 !important; 
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1); 
+}
+
+th.columna-fija {
+    z-index: 11; 
+}
+
+/* --- COMPONENTES --- */
 .boton-editar, .boton-eliminar {
     padding: 6px 10px;
     border-radius: 6px;
@@ -26,53 +83,21 @@
     background: white;
     cursor: pointer;
     transition: 0.2s;
-    margin-right: 5px;
 }
 
-.boton-editar:hover {
-    background-color: #f0f7ff;
-    color: var(--accent-blue);
-    border-color: var(--accent-blue);
-}
 
-.boton-eliminar:hover {
-    background-color: #fff0f0;
-    color: #e03131;
-    border-color: #e03131;
-}
+/* --- ESTADOS Y HOVER --- */
 
-/* Badge de Plan */
-.etiqueta-plan {
-    background: #e7f5ff;
-    color: #1971c2;
-    padding: 4px 12px;
-    border-radius: 50px;
-    font-size: 0.85rem;
-    font-weight: 600;
-}
 
-/* Estilo para el link activo del submenú */
-.enlace-activo {
-    color: var(--accent-blue) !important;
-    font-weight: 600;
-}
-
-/* MOROSOS */
-
-.fila-moroso {
-    background-color: #fff5f5 !important; 
-    border-left: 4px solid #ff8787;
-}
-
-.fila-moroso:hover {
-    background-color: #ffe3e3 !important;
-}
-
-.etiqueta-deuda {
-    background: #ffe3e3;
-    color: #e03131;
-    padding: 4px 12px;
-    border-radius: 50px;
-    font-size: 0.85rem;
-    font-weight: 600;
+/* --- RESPONSIVE --- */
+@media screen and (max-width: 768px) {
+    .seccion-clientes { padding: 15px; }
+    
+    .tabla-cronograma th, 
+    .tabla-cronograma td {
+        padding: 12px 10px;
+        font-size: 0.85rem;
+    }
+    
+    #content-header { height: auto; min-height: 100px; padding: 20px; }
 }

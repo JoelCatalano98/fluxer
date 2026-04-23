@@ -1,17 +1,27 @@
-/* --- ESTILOS DE FORMULARIOS FLUXER - CREACIÓN CLIENTES Y PROFESIONALES --- */
+
+
+
 
 .contenedor-formulario {
     padding: 40px;
-    max-width: 1100px;
-    margin: 0 auto;
+    width: 100%;          
+    max-width: 100%;      
+    margin: 0;         
+    display: block;     
+    box-sizing: border-box;
 }
+
 
 .formulario-fluxer {
     background-color: var(--white);
-    padding: 30px;
-    width: 900px;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    padding: 30px;     
+    width: 90%;     
+    max-width: 1300px; 
+    margin: 0 auto;   
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+    text-align: left;   
 }
 
 .grupo-campo {
@@ -70,7 +80,7 @@
 .cuadricula-formulario {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 5px;
+    gap: 10px;
 }
 
 .ancho-completo {
@@ -146,8 +156,65 @@
     font-weight: bold;
 }
 
-@media (max-width: 600px) {
+
+
+
+
+
+/* --- RESPONSIVE: TABLETS Y CELULARES --- */
+@media screen and (max-width: 768px) {
+    
+    .contenedor-formulario {
+        padding: 10px;
+        width: 100%;
+    }
+
+    .formulario-fluxer {
+        width: 100%;       
+        padding: 5px 15px; 
+        border-radius: 8px;
+        box-shadow: none;
+        border: 1px solid #eee; 
+    }
+
     .cuadricula-formulario {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; 
+        gap: 10px; 
+    }
+
+    .cabecera-formulario {
+        padding-left: 15px;
+        margin-bottom: 20px;
+    }
+
+    .cabecera-formulario h1 {
+        font-size: 1.4rem;
+    }
+
+    .grupo-campo input {
+        height: 45px;
+        font-size: 1rem;
+    }
+
+    .acciones-formulario {
+        flex-direction: column-reverse; 
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .btn-primary, .btn-secondary, .btn-help {
+        width: 100%;     
+        justify-content: center;
+        padding: 14px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .formulario-fluxer {
+        padding: 15px 10px;
+    }
+    
+    .cabecera-formulario h1 {
+        font-size: 1.2rem;
     }
 }

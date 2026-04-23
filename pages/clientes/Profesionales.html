@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fluxer - Profesionales</title>
     <link rel="stylesheet" href="../../css/layout.css">
-    <link rel="stylesheet" href="../../css/listados_gestion.css">
+    <link rel="stylesheet" href="../../css/clientes/listados_gestion.css">
     <link rel="stylesheet" href="../../css/calendario.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
@@ -13,6 +13,9 @@
 <body>
 
     <nav class="topbar">
+        <button id="menu-toggle" class="hamburger-btn">
+                <i class="bi bi-list"></i>
+        </button>
         <div class="search-bar">
             <input type="text" placeholder="Buscar profesionales...">
         </div>
@@ -80,7 +83,7 @@
             <img src="../../img/welcome-background.png" alt="Fondo" style="height: 100%; width: 100%; object-fit: cover;">
         </section>
 
-        <div style="padding: 20px 30px;">
+        <div style="padding: 20px 5px;">
             <!-- Título y descripción abajo de la imagen -->
             <div style="margin-bottom: 25px;">
                 <h1 style="color: #333; margin: 0; font-size: 2rem;">Staff Profesional</h1>
@@ -88,46 +91,87 @@
             </div>
 
             <!-- Tabla en formato estándar (data-table) -->
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th>Referente</th>
-                        <th>Especialidad</th>
-                        <th>Matrícula</th>
-                        <th>Teléfono</th>
-                        <th>Estado</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Juan Pérez</strong></td>
-                        <td>Kinesiología</td>
-                        <td>Mat. 12345</td>
-                        <td>341-555-0123</td>
-                        <td><span class="badge-status online" style="background: #ebfbee; color: #40c057; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: 600;">Activo</span></td>
-                        <td>
-                            <div style="display: flex; gap: 10px;">
-                                <button class="btn-edit" title="Editar" style="border: none; background: #e1f0ff; color: var(--accent-blue); padding: 5px 10px; border-radius: 4px; cursor: pointer;"><i class="bi bi-pencil"></i></button>
-                                <button class="btn-delete" title="Eliminar" style="border: none; background: #fff1f1; color: #e03131; padding: 5px 10px; border-radius: 4px; cursor: pointer;"><i class="bi bi-trash"></i></button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><strong>María García</strong></td>
-                        <td>Nutrición</td>
-                        <td>Mat. 67890</td>
-                        <td>341-555-0987</td>
-                        <td><span class="badge-status online" style="background: #ebfbee; color: #40c057; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: 600;">Activo</span></td>
-                        <td>
-                            <div style="display: flex; gap: 10px;">
-                                <button class="btn-edit" title="Editar" style="border: none; background: #e1f0ff; color: var(--accent-blue); padding: 5px 10px; border-radius: 4px; cursor: pointer;"><i class="bi bi-pencil"></i></button>
-                                <button class="btn-delete" title="Eliminar" style="border: none; background: #fff1f1; color: #e03131; padding: 5px 10px; border-radius: 4px; cursor: pointer;"><i class="bi bi-trash"></i></button>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="contenedor-scroll">
+                <table class="tabla-cronograma">
+                    <thead>
+                        <tr>
+                            <th class="columna-fija">Referente</th>
+                            <th>Especialidad</th>
+                            <th>Matrícula</th>
+                            <th>Teléfono</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="columna-fija"><strong>Juan Pérez</strong></td>
+                            <td>Kinesiología</td>
+                            <td>Mat. 12345</td>
+                            <td>341-555-0123</td>
+                            <td><span class="badge-status online" style="background: #ebfbee; color: #40c057; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: 600;">Activo</span></td>
+                            <td>
+                                <div style="display: flex; gap: 10px;">
+                                    <button class="btn-edit" title="Editar" style="border: none; background: #e1f0ff; color: var(--accent-blue); padding: 5px 10px; border-radius: 4px; cursor: pointer;"><i class="bi bi-pencil"></i></button>
+                                    <button class="btn-delete" title="Eliminar" style="border: none; background: #fff1f1; color: #e03131; padding: 5px 10px; border-radius: 4px; cursor: pointer;"><i class="bi bi-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="columna-fija"><strong>Juan Pérez</strong></td>
+                            <td>Nutricionista</td>
+                            <td>Mat. 1274745</td>
+                            <td>341-555-0123</td>
+                            <td><span class="badge-status online" style="background: #ebfbee; color: #40c057; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: 600;">Activo</span></td>
+                            <td>
+                                <div style="display: flex; gap: 10px;">
+                                    <button class="btn-edit" title="Editar" style="border: none; background: #e1f0ff; color: var(--accent-blue); padding: 5px 10px; border-radius: 4px; cursor: pointer;"><i class="bi bi-pencil"></i></button>
+                                    <button class="btn-delete" title="Eliminar" style="border: none; background: #fff1f1; color: #e03131; padding: 5px 10px; border-radius: 4px; cursor: pointer;"><i class="bi bi-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="columna-fija"><strong>Juan Pérez</strong></td>
+                            <td>Pediatra</td>
+                            <td>Mat. 567823</td>
+                            <td>341-555-0123</td>
+                            <td><span class="badge-status online" style="background: #ebfbee; color: #40c057; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: 600;">Activo</span></td>
+                            <td>
+                                <div style="display: flex; gap: 10px;">
+                                    <button class="btn-edit" title="Editar" style="border: none; background: #e1f0ff; color: var(--accent-blue); padding: 5px 10px; border-radius: 4px; cursor: pointer;"><i class="bi bi-pencil"></i></button>
+                                    <button class="btn-delete" title="Eliminar" style="border: none; background: #fff1f1; color: #e03131; padding: 5px 10px; border-radius: 4px; cursor: pointer;"><i class="bi bi-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="columna-fija"><strong>Juan Pérez</strong></td>
+                            <td>Sicologa</td>
+                            <td>Mat. 12345</td>
+                            <td>341-555-0123</td>
+                            <td><span class="badge-status online" style="background: #ebfbee; color: #40c057; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: 600;">Activo</span></td>
+                            <td>
+                                <div style="display: flex; gap: 10px;">
+                                    <button class="btn-edit" title="Editar" style="border: none; background: #e1f0ff; color: var(--accent-blue); padding: 5px 10px; border-radius: 4px; cursor: pointer;"><i class="bi bi-pencil"></i></button>
+                                    <button class="btn-delete" title="Eliminar" style="border: none; background: #fff1f1; color: #e03131; padding: 5px 10px; border-radius: 4px; cursor: pointer;"><i class="bi bi-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="columna-fija"><strong>María García</strong></td>
+                            <td>Podologa</td>
+                            <td>Mat. 67890</td>
+                            <td>341-555-0987</td>
+                            <td><span class="badge-status online" style="background: #ebfbee; color: #40c057; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: 600;">Activo</span></td>
+                            <td>
+                                <div style="display: flex; gap: 10px;">
+                                    <button class="btn-edit" title="Editar" style="border: none; background: #e1f0ff; color: var(--accent-blue); padding: 5px 10px; border-radius: 4px; cursor: pointer;"><i class="bi bi-pencil"></i></button>
+                                    <button class="btn-delete" title="Eliminar" style="border: none; background: #fff1f1; color: #e03131; padding: 5px 10px; border-radius: 4px; cursor: pointer;"><i class="bi bi-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </main>
 
@@ -156,5 +200,6 @@
 
     <script src="../../js/calendario-modal.js"></script>
     <script src="../../js/help.js"></script>
+    <script src="../../js/Hamburguesa.js"></script>
 </body>
 </html>

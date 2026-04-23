@@ -13,6 +13,9 @@
 <body>
 
     <nav class="topbar">
+        <button id="menu-toggle" class="hamburger-btn">
+                <i class="bi bi-list"></i>
+        </button>
         <div class="search-bar">
             <input type="text" placeholder="Buscar en clientes...">
         </div>
@@ -88,46 +91,48 @@
             </div>
 
             <!-- Tabla en formato estándar (data-table) -->
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th>Cod. Cliente</th>
-                        <th>Nombre Cliente</th>
-                        <th>DNI</th>
-                        <th>Teléfono</th>
-                        <th>Plan / Abono</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>#001</td>
-                        <td><strong>Joel Silva</strong></td>
-                        <td>12.345.678</td>
-                        <td>341-555-0123</td>
-                        <td><span class="etiqueta-plan">Premium</span></td>
-                        <td>
-                            <div style="display: flex; gap: 10px;">
-                                <button class="btn-help" title="Editar" style="border: none; background: #e1f0ff; color: var(--accent-blue); padding: 5px 10px; border-radius: 4px; cursor: pointer;"><i class="bi bi-pencil"></i></button>
-                                <button class="btn-help" title="Eliminar" style="border: none; background: #fff1f1; color: #e03131; padding: 5px 10px; border-radius: 4px; cursor: pointer;"><i class="bi bi-trash"></i></button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>#002</td>
-                        <td><strong>Tomás Silva</strong></td>
-                        <td>45.987.654</td>
-                        <td>341-555-0987</td>
-                        <td><span class="etiqueta-plan">Básico</span></td>
-                        <td>
-                            <div style="display: flex; gap: 10px;">
-                                <button class="btn-help" title="Editar" style="border: none; background: #e1f0ff; color: var(--accent-blue); padding: 5px 10px; border-radius: 4px; cursor: pointer;"><i class="bi bi-pencil"></i></button>
-                                <button class="btn-help" title="Eliminar" style="border: none; background: #fff1f1; color: #e03131; padding: 5px 10px; border-radius: 4px; cursor: pointer;"><i class="bi bi-trash"></i></button>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="contenedor-scroll">
+                <table class="tabla-cronograma">
+                    <thead>
+                        <tr>
+                            <th class="columna-fija">Cod. Cliente</th>
+                            <th>Nombre Cliente</th>
+                            <th>DNI</th>
+                            <th>Teléfono</th>
+                            <th>Plan / Abono</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="columna-fija">#001</td>
+                            <td><strong>Joel Silva</strong></td>
+                            <td>12.345.678</td>
+                            <td>341-555-0123</td>
+                            <td><span class="etiqueta-plan">Premium</span></td>
+                            <td>
+                                <div style="display: flex; gap: 10px;">
+                                    <button class="btn-help" title="Editar" style="border: none; background: #e1f0ff; color: var(--accent-blue); padding: 5px 10px; border-radius: 4px; cursor: pointer;"><i class="bi bi-pencil"></i></button>
+                                    <button class="btn-help" title="Eliminar" style="border: none; background: #fff1f1; color: #e03131; padding: 5px 10px; border-radius: 4px; cursor: pointer;"><i class="bi bi-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="columna-fija">#002</td>
+                            <td><strong>Tomás Silva</strong></td>
+                            <td>45.987.654</td>
+                            <td>341-555-0987</td>
+                            <td><span class="etiqueta-plan">Básico</span></td>
+                            <td>
+                                <div style="display: flex; gap: 10px;">
+                                    <button class="btn-help" title="Editar" style="border: none; background: #e1f0ff; color: var(--accent-blue); padding: 5px 10px; border-radius: 4px; cursor: pointer;"><i class="bi bi-pencil"></i></button>
+                                    <button class="btn-help" title="Eliminar" style="border: none; background: #fff1f1; color: #e03131; padding: 5px 10px; border-radius: 4px; cursor: pointer;"><i class="bi bi-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </main>
 
@@ -156,5 +161,6 @@
 
     <script src="../../js/calendario-modal.js"></script>
     <script src="../../js/help.js"></script>
+    <script src="../../js/Hamburguesa.js"></script>
 </body>
 </html>

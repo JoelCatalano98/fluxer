@@ -13,6 +13,9 @@
 <body>
 
     <nav class="topbar">
+        <button id="menu-toggle" class="hamburger-btn">
+                <i class="bi bi-list"></i>
+        </button>
         <div class="search-bar">
             <input type="text" placeholder="Buscar morosos...">
         </div>
@@ -93,59 +96,61 @@
             </div>
 
             <!-- Tabla en formato estándar (data-table) -->
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th>Cod. Cliente</th>
-                        <th>Nombre Cliente</th>
-                        <th>Deuda</th>
-                        <th>Días de Atraso</th>
-                        <th>Último Pago</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="fila-moroso">
-                        <td>#045</td>
-                        <td><strong>Carlos Méndez</strong></td>
-                        <td><span style="color: #e03131; font-weight: 600;">$12.500</span></td>
-                        <td><span class="etiqueta-deuda">15 días</span></td>
-                        <td>10/03/2026</td>
-                        <td>
-                            <div style="display: flex; gap: 10px;">
-                                <button class="btn-help" title="Ver Detalle" style="border: none; background: #e1f0ff; color: var(--accent-blue); padding: 5px 10px; border-radius: 4px; cursor: pointer;"><i class="bi bi-eye"></i></button>
-                                <button class="btn-help" title="Registrar Pago" style="border: none; background: #ebfbee; color: #40c057; padding: 5px 10px; border-radius: 4px; cursor: pointer;"><i class="bi bi-cash-stack"></i></button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="fila-moroso">
-                        <td>#012</td>
-                        <td><strong>Ana Espósito</strong></td>
-                        <td><span style="color: #e03131; font-weight: 600;">$8.900</span></td>
-                        <td><span class="etiqueta-deuda">32 días</span></td>
-                        <td>15/02/2026</td>
-                        <td>
-                            <div style="display: flex; gap: 10px;">
-                                <button class="btn-help" title="Ver Detalle" style="border: none; background: #e1f0ff; color: var(--accent-blue); padding: 5px 10px; border-radius: 4px; cursor: pointer;"><i class="bi bi-eye"></i></button>
-                                <button class="btn-help" title="Registrar Pago" style="border: none; background: #ebfbee; color: #40c057; padding: 5px 10px; border-radius: 4px; cursor: pointer;"><i class="bi bi-cash-stack"></i></button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="fila-moroso">
-                        <td>#089</td>
-                        <td><strong>Roberto Gómez</strong></td>
-                        <td><span style="color: #e03131; font-weight: 600;">$23.800</span></td>
-                        <td><span class="etiqueta-deuda">60 días</span></td>
-                        <td>10/01/2026</td>
-                        <td>
-                            <div style="display: flex; gap: 10px;">
-                                <button class="btn-help" title="Ver Detalle" style="border: none; background: #e1f0ff; color: var(--accent-blue); padding: 5px 10px; border-radius: 4px; cursor: pointer;"><i class="bi bi-eye"></i></button>
-                                <button class="btn-help" title="Registrar Pago" style="border: none; background: #ebfbee; color: #40c057; padding: 5px 10px; border-radius: 4px; cursor: pointer;"><i class="bi bi-cash-stack"></i></button>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="contenedor-scroll">
+                <table class="tabla-cronograma">
+                    <thead>
+                        <tr>
+                            <th>Cod. Cliente</th>
+                            <th  class="columna-fija">Nombre Cliente</th>
+                            <th>Deuda</th>
+                            <th>Días de Atraso</th>
+                            <th>Último Pago</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="fila-moroso">
+                            <td>#045</td>
+                            <td class="columna-fija"><strong>Carlos Méndez</strong></td>
+                            <td><span style="color: #e03131; font-weight: 600;">$12.500</span></td>
+                            <td><span class="etiqueta-deuda">15 días</span></td>
+                            <td>10/03/2026</td>
+                            <td>
+                                <div style="display: flex; gap: 10px;">
+                                    <button class="btn-help" title="Ver Detalle" style="border: none; background: #e1f0ff; color: var(--accent-blue); padding: 5px 10px; border-radius: 4px; cursor: pointer;"><i class="bi bi-eye"></i></button>
+                                    <button class="btn-help" title="Registrar Pago" style="border: none; background: #ebfbee; color: #40c057; padding: 5px 10px; border-radius: 4px; cursor: pointer;"><i class="bi bi-cash-stack"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="fila-moroso">
+                            <td>#012</td>
+                            <td class="columna-fija"><strong>Ana Espósito</strong></td>
+                            <td><span style="color: #e03131; font-weight: 600;">$8.900</span></td>
+                            <td><span class="etiqueta-deuda">32 días</span></td>
+                            <td>15/02/2026</td>
+                            <td>
+                                <div style="display: flex; gap: 10px;">
+                                    <button class="btn-help" title="Ver Detalle" style="border: none; background: #e1f0ff; color: var(--accent-blue); padding: 5px 10px; border-radius: 4px; cursor: pointer;"><i class="bi bi-eye"></i></button>
+                                    <button class="btn-help" title="Registrar Pago" style="border: none; background: #ebfbee; color: #40c057; padding: 5px 10px; border-radius: 4px; cursor: pointer;"><i class="bi bi-cash-stack"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="fila-moroso">
+                            <td>#089</td>
+                            <td class="columna-fija"><strong>Roberto Gómez</strong></td>
+                            <td><span style="color: #e03131; font-weight: 600;">$23.800</span></td>
+                            <td><span class="etiqueta-deuda">60 días</span></td>
+                            <td>10/01/2026</td>
+                            <td>
+                                <div style="display: flex; gap: 10px;">
+                                    <button class="btn-help" title="Ver Detalle" style="border: none; background: #e1f0ff; color: var(--accent-blue); padding: 5px 10px; border-radius: 4px; cursor: pointer;"><i class="bi bi-eye"></i></button>
+                                    <button class="btn-help" title="Registrar Pago" style="border: none; background: #ebfbee; color: #40c057; padding: 5px 10px; border-radius: 4px; cursor: pointer;"><i class="bi bi-cash-stack"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </main>
 
@@ -173,6 +178,7 @@
     </div>
 
     <script src="../../js/calendario-modal.js"></script>
+    <script src="../../js/Hamburguesa.js"></script>
     <script src="../../js/help.js"></script>
 </body>
 </html>
