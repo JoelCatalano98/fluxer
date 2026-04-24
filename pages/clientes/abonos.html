@@ -13,6 +13,9 @@
 <body>
 
     <nav class="topbar">
+         <button id="menu-toggle" class="hamburger-btn">
+                <i class="bi bi-list"></i>
+        </button>
         <div class="search-bar">
             <input type="text" placeholder="Buscar planes...">
         </div>
@@ -77,12 +80,12 @@
     <main class="main-content">
         <!-- Imagen de cabecera más alta -->
         <section id="content-header" style="min-height: 200px; height: 250px;">
-            <img src="../../img/welcome-background.png" alt="Fondo" style="height: 100%; width: 100%; object-fit: cover;">
+            <img src="../../img/welcome-background.png" alt="Fondo" style="height: 85%; width: 100%; object-fit: cover;">
         </section>
 
-        <div style="padding: 20px 30px;">
+        <div style="padding: 0 15px;">
             <!-- Título y acciones abajo de la imagen -->
-            <div style="margin-bottom: 25px; display: flex; justify-content: space-between; align-items: flex-end;">
+            <div class="header-planes-abonos">
                 <div>
                     <h1 style="color: #333; margin: 0; font-size: 2rem;">Abonos y Planes</h1>
                     <p style="color: #666; margin: 5px 0 0 0;">Configuración de membresías y paquetes de servicios.</p>
@@ -93,8 +96,8 @@
             </div>
 
             <!-- Tabla en formato estándar (data-table) -->
-            <div class="contenedor-tabla-scroll">
-                <table class="data-table">
+            <div class="contenedor-scroll">
+                <table class="tabla-cronograma"cmd>
                     <thead>
                         <tr>
                             <th class="columna-fija">Código</th>
@@ -123,6 +126,58 @@
                             <td class="columna-fija">#002</td>
                             <td><strong>Plan Gim 2</strong></td>
                             <td>$55.000 x mes</td>
+                            <td>Paquete medio, incluye 3 clases semanales + rutina personal.</td>
+                            <td><span class="badge-status online" style="background: #ebfbee; color: #40c057; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: 600;">Activo</span></td>
+                            <td>
+                                <div style="display: flex; gap: 10px;">
+                                    <button class="btn-help" title="Editar" style="border: none; background: #e1f0ff; color: var(--accent-blue); padding: 5px 10px; border-radius: 4px; cursor: pointer;"><i class="bi bi-pencil"></i></button>
+                                    <button class="btn-help" title="Eliminar" style="border: none; background: #fff1f1; color: #e03131; padding: 5px 10px; border-radius: 4px; cursor: pointer;"><i class="bi bi-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="columna-fija">#001</td>
+                            <td><strong>Plan Gim 1</strong></td>
+                            <td>$35.000 x mes</td>
+                            <td>Paquete básico de 3 clases semanales de 1,5 horas.</td>
+                            <td><span class="badge-status online" style="background: #ebfbee; color: #40c057; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: 600;">Activo</span></td>
+                            <td>
+                                <div style="display: flex; gap: 10px;">
+                                    <button class="btn-help" title="Editar" style="border: none; background: #e1f0ff; color: var(--accent-blue); padding: 5px 10px; border-radius: 4px; cursor: pointer;"><i class="bi bi-pencil"></i></button>
+                                    <button class="btn-help" title="Eliminar" style="border: none; background: #fff1f1; color: #e03131; padding: 5px 10px; border-radius: 4px; cursor: pointer;"><i class="bi bi-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="columna-fija">#002</td>
+                            <td><strong>Plan Gim 2</strong></td>
+                            <td>$55.000 x mes</td>
+                            <td>Paquete medio, incluye 3 clases semanales + rutina personal.</td>
+                            <td><span class="badge-status online" style="background: #ebfbee; color: #40c057; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: 600;">Activo</span></td>
+                            <td>
+                                <div style="display: flex; gap: 10px;">
+                                    <button class="btn-help" title="Editar" style="border: none; background: #e1f0ff; color: var(--accent-blue); padding: 5px 10px; border-radius: 4px; cursor: pointer;"><i class="bi bi-pencil"></i></button>
+                                    <button class="btn-help" title="Eliminar" style="border: none; background: #fff1f1; color: #e03131; padding: 5px 10px; border-radius: 4px; cursor: pointer;"><i class="bi bi-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="columna-fija">#001</td>
+                            <td><strong>Plan Gim 1</strong></td>
+                            <td>$35.000 x mes</td>
+                            <td>Paquete básico de 3 clases semanales de 1,5 horas.</td>
+                            <td><span class="badge-status online" style="background: #ebfbee; color: #40c057; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: 600;">Activo</span></td>
+                            <td>
+                                <div style="display: flex; gap: 10px;">
+                                    <button class="btn-help" title="Editar" style="border: none; background: #e1f0ff; color: var(--accent-blue); padding: 5px 10px; border-radius: 4px; cursor: pointer;"><i class="bi bi-pencil"></i></button>
+                                    <button class="btn-help" title="Eliminar" style="border: none; background: #fff1f1; color: #e03131; padding: 5px 10px; border-radius: 4px; cursor: pointer;"><i class="bi bi-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="columna-fija">#002</td>
+                            <td><strong>Plan Gim 1</strong></td>
+                            <td>$35.000 x mes</td>
                             <td>Paquete medio, incluye 3 clases semanales + rutina personal.</td>
                             <td><span class="badge-status online" style="background: #ebfbee; color: #40c057; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: 600;">Activo</span></td>
                             <td>
@@ -211,5 +266,6 @@
             if (event.target == calModal) closeCalendar();
         }
     </script>
+    <script src="../../js/Hamburguesa.js"></script>
 </body>
 </html>

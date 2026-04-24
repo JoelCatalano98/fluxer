@@ -41,6 +41,18 @@
     gap: 70px;
     padding: 20px 40px;
 }
+.modal-overlay {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 9999; /* Por encima de todo */
+    backdrop-filter: blur(5px); 
+}
+
 
 .tarjeta-plan {
     background: white;
@@ -220,6 +232,17 @@
         gap: 20px !important;
         padding: 15px !important;
     }
+    .modal-overlay {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 95%;
+    height: 75%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 9999; /* Por encima de todo */
+    backdrop-filter: blur(5px); /* Efecto de desenfoque */
+}
 
     .tarjeta-plan {
         margin: 0 auto;

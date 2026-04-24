@@ -19,6 +19,12 @@ section, .main-content > div {
     align-items: center;
     margin-bottom: 25px;
 }
+.header-planes-abonos{
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
 
 .cabecera-seccion h2 {
     margin: 0;
@@ -99,5 +105,14 @@ th.columna-fija {
         font-size: 0.85rem;
     }
     
-    #content-header { height: auto; min-height: 100px; padding: 20px; }
+    #content-header { 
+        height: auto; 
+        min-height: 100px; 
+        padding: 20px; }
+}
+.header-planes-abonos{
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
