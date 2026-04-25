@@ -1,4 +1,5 @@
 /* --- CONTENEDOR Y ACCIONES --- */
+
 .contenedor-feriados {
     padding: 30px;
     max-width: 1000px;
@@ -12,6 +13,7 @@
 }
 
 /* --- LISTA DE FERIADOS --- */
+
 .lista-feriados {
     display: flex;
     flex-direction: column;
@@ -36,6 +38,7 @@
 }
 
 /* Identificadores Visuales */
+
 .item-feriado.nacional { border-left-color: #ffc107; } 
 .item-feriado.vacaciones { border-left-color: #40c057; } 
 
@@ -46,6 +49,7 @@
 }
 
 /* CAJA DE FECHA */
+
 .caja-fecha-feriado {
     background: #f8f9fa;
     padding: 10px;
@@ -63,7 +67,7 @@
     line-height: 1.2;
 }
 
-.caja-fecha-feriado .month { /* Corregido de .mes a .month por tu HTML */
+.caja-fecha-feriado .month { 
     display: block;
     font-size: 0.75rem;
     text-transform: uppercase;
@@ -95,6 +99,7 @@
 }
 
 /* --- MODAL Y FORMULARIO --- */
+
 .grupo-rango-fechas {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -106,6 +111,7 @@
 }
 
 /* --- RESPONSIVE (CELULARES) --- */
+
 @media screen and (max-width: 768px) {
     .contenedor-feriados {
         padding: 15px;
@@ -116,11 +122,11 @@
     }
 
     .acciones-feriados button {
-        width: 100%; /* Botón "Agregar" ancho completo en celu */
+        width: 100%;
     }
 
     .item-feriado {
-        flex-direction: column; /* Apila fecha e info arriba, estado abajo */
+        flex-direction: column;
         align-items: flex-start;
         gap: 15px;
         padding: 15px;
@@ -134,6 +140,6 @@
     }
 
     .grupo-rango-fechas {
-        grid-template-columns: 1fr; /* Una fecha arriba de la otra en el modal */
+        grid-template-columns: 1fr; 
     }
 }

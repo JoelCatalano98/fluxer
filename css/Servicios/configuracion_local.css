@@ -80,8 +80,6 @@
     color: #888;
 }
 
-/* Switch simple */
-
 .interruptor {
     position: relative;
     display: inline-block;
@@ -127,9 +125,9 @@ input:checked + .deslizador:before { transform: translateX(24px); }
 
 .acciones-finales-configuracion {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     gap: 20px;
-    width: 375px;
+    width: 420px;
     margin-top: 10px;
     margin-bottom: 50px;
     padding: 25px;
@@ -141,6 +139,7 @@ input:checked + .deslizador:before { transform: translateX(24px); }
 
 
 /* Botón Hamburguesa - Oculto */
+
 .hamburger-btn {
     display: none;
     background: none;
@@ -160,7 +159,7 @@ input:checked + .deslizador:before { transform: translateX(24px); }
 
     .sidebar {
         position: fixed;
-        left: -260px; /* Escondida a la izquierda */
+        left: -260px; 
         transition: all 0.3s ease;
         z-index: 1000;
         height: 100vh;
@@ -173,7 +172,7 @@ input:checked + .deslizador:before { transform: translateX(24px); }
         margin: 0 0 auto; 
     }
     .sidebar.active {
-        left: 0; /* Aparece cuando tiene la clase .active */
+        left: 0; 
     }
 
     .main-content {

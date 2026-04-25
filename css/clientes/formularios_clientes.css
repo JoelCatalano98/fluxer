@@ -1,7 +1,4 @@
 
-
-
-
 .contenedor-formulario {
     padding: 40px;
     width: 100%;          
@@ -63,7 +60,7 @@
 }
 
 .cabecera-profesional {
-    border-left-color: #40c057; /* Un tono verde para diferenciar staff */
+    border-left-color: #40c057; 
 }
 
 .cabecera-formulario h1 {

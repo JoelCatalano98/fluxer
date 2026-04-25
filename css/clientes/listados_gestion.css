@@ -1,4 +1,5 @@
-/* --- ESTE CSS , ABARCA PROFESIONALES,CLIENTES Y MOROSOS--- */
+/* --- IMPORTANTE , ESTE CSS , ABARCA PROFESIONALES,CLIENTES Y MOROSOS--- */
+
 .main-content { 
     width: 100%;
     overflow-x: hidden; /* Evita el scroll horizontal de toda la página */
@@ -45,7 +46,7 @@ section, .main-content > div {
 
 .tabla-cronograma {
     width: 100%;
-    min-width: 900px; /* Forzamos el scroll horizontal */
+    min-width: 900px; 
     border-collapse: separate;
     border-spacing: 0;
 }
@@ -81,7 +82,6 @@ th.columna-fija {
     z-index: 11; 
 }
 
-/* --- COMPONENTES --- */
 .boton-editar, .boton-eliminar {
     padding: 6px 10px;
     border-radius: 6px;
@@ -92,7 +92,7 @@ th.columna-fija {
 }
 
 
-/* --- ESTADOS Y HOVER --- */
+
 
 
 /* --- RESPONSIVE --- */

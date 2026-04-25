@@ -1,7 +1,7 @@
 .tabla-cronograma {
     width: 100%;
     border-collapse: separate;
-    border-spacing: 8px; /* Espacio entre celdas para que parezcan tarjetas */
+    border-spacing: 8px; 
 }
 
 .tabla-cronograma th {
@@ -42,7 +42,7 @@
 }
 
 .caja-turno {
-    background: #e1f0ff; /* Azul clarito para horas con gente */
+    background: #e1f0ff; 
     border-left: 4px solid #0099ff;
     padding: 10px;
     border-radius: 6px;
@@ -61,7 +61,7 @@
 }
 
 .caja-turno.activo {
-    background: #d4edda; /* Verde si el grupo está lleno o confirmado */
+    background: #d4edda; 
     border-left-color: #28a745;
 }
 
@@ -89,6 +89,7 @@
 
 
 /* --- CONTENEDOR PARA EL DESPLAZAMIENTO --- */
+
 .contenedor-scroll {
     width: 100%;
     overflow-x: auto; /* Permite deslizar para el costado */
@@ -99,12 +100,13 @@
 
 .tabla-cronograma {
     width: 100%;
-    min-width: 900px; /* Forzamos el ancho  */
+    min-width: 900px;
     border-collapse: separate;
     border-spacing: 8px;
 }
 
-/* --- LA MAGIA: HORA FIJA --- */
+/* ---HORA FIJA --- */
+
 .columna-fija {
     position: sticky;
     left: 0; 
@@ -114,6 +116,7 @@
 }
 
 /* --- Responsive --- */
+
 @media screen and (max-width: 480px) {
     #content-header {
         height: auto !important;
@@ -137,7 +140,7 @@
         font-size: 0.8rem;
     }
 
-    /* La imagen de fondo la ocultamos */
+    /*  imagen de fondo  oculta */
     .img-fondo {
         display: none;
     }

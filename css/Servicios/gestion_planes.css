@@ -49,7 +49,7 @@
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.6);
-    z-index: 9999; /* Por encima de todo */
+    z-index: 9999;
     backdrop-filter: blur(5px); 
 }
 
@@ -196,6 +196,7 @@
 @media screen and (max-width: 480px) {
     
     /* 1. Ajuste del Header (Título y Fondo) */
+    
     #content-header {
         height: 95px !important;
         padding: 15px !important;
@@ -221,27 +222,27 @@
     }
 
     .btn-primary {
-        width: 100% !important; /* El botón ocupa todo el ancho en el celu */
+        width: 100% !important; 
         justify-content: center;
     }
 
     /* 3. Cuadrícula de Tarjetas: Una debajo de la otra */
 
     .cuadricula-planes {
-        grid-template-columns: 1fr !important; /* 1 sola columna */
+        grid-template-columns: 1fr !important; 
         gap: 20px !important;
         padding: 15px !important;
     }
     .modal-overlay {
-    display: none; /* Oculto por defecto */
+    display: none; 
     position: fixed;
     top: 0;
     left: 0;
     width: 95%;
     height: 75%;
     background: rgba(0, 0, 0, 0.6);
-    z-index: 9999; /* Por encima de todo */
-    backdrop-filter: blur(5px); /* Efecto de desenfoque */
+    z-index: 9999; 
+    backdrop-filter: blur(5px); 
 }
 
     .tarjeta-plan {
@@ -269,21 +270,17 @@
     }
 
     #modalNuevoPlan .cuadricula-form {
-        grid-template-columns: 1fr !important; /* Los inputs uno abajo del otro */
+        grid-template-columns: 1fr !important; 
         gap: 15px !important;
     }
 
     #modalNuevoPlan .pie-formulario {
-        flex-direction: column; /* Botones Guardar/Cancelar uno arriba del otro */
+        flex-direction: column; 
         gap: 10px;
     }
 
     #modalNuevoPlan .pie-formulario button {
         width: 100%;
     }
-
-    /* 5. Ajuste de imágenes decorativas */
-    #content-header img {
-        display: none; /* Quitamos la imagen de fondo si estorba el texto en el celu */
-    }
+    
 }
